@@ -1,0 +1,59 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# Mouse theme
+export XCURSOR_THEME="Oxygen_Black"
+#xrdb -merge ~/.Xdefaults
+
+# Keyboard layout switching
+setxkbmap -layout "us,ru" &
+setxkbmap -option "grp:alt_shift_toggle,grp_led:scroll" &
+
+# Conky. ~/.conkyrc
+conky &
+
+# Compton with blur. Compiled from git.
+/home/denis/soft/compton/compton --blur-kern '5,5,0.4,1,1,1,1,1,1,1,1,0.05,1,1,1,1,1,1,0.14,1,1,2,2,2,2,2,' --config /home/denis/.config/compton.conf &
+
+# Panel
+#avant-window-navigator &
+
+# Panel
+#while true; do ./windows.pl; sleep 0.3; done | dzen2 &
+while true; do perl /home/denis/projects/perl/dzen2_config/music.pl; sleep 0.3; done | dzen2 -fn '-*-liberation mono-*-*-*-*-*-*-*-*-*-*-*-*' -ta l -x 100 -y 0 -w 1340 &
+
+# Tray
+stalonetray -bg '#222222' --dockapp-mode -i 20 &
+
+# Background image
+feh --bg-scale /home/denis/Images/chaika.jpg &
+
+# Notification daemon
+/usr/lib64/xfce4/notifyd/xfce4-notifyd &
+
+# The runner application
+krunner &
+
+# Terminal emulator
+konsole &
+
+# Music player
+screen -S ncm -d -m ncmpcpp &
+
+# Gnupg graphical tool
+kgpg &
+
+# Layout indicator
+gxkb &
+
+# IM
+pidgin &
+
+# Mail client
+kmail &
+
+# Web browser
+firefox &
