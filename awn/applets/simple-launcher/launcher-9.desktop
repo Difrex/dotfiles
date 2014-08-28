@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=exit
+Comment=exit
+Exec=obshutdown
+Icon=preferences-management-service

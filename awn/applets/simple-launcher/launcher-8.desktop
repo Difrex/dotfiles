@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Sublime Text 2
+Comment=The text editor
+Exec='/home/denis/soft/Sublime Text 2/sublime_text'
+Icon=/home/denis/soft/Sublime Text 2/Icon/48x48/sublime_text.png
