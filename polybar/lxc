@@ -1,0 +1,3 @@
+#!/bin/bash
+
+lxc list | grep -c RUN

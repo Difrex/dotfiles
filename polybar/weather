@@ -1,0 +1,21 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import requests
+import json
+
+city = "Minsk"
+api_key = ""
+units = "metric"
+unit_key = "C"
+
+r = requests.get(
+    "http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}&units={}".format(
+        city, api_key, units)
+)
+
+weather = json.loads(r.content)
+
+info = weather["weather"][0]["description"].capitalize()
+temp = int(float(weather["main"]["temp"]))
+
+print("{0}, {1} °{2}".format(info, temp, unit_key))
